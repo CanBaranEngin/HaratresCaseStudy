@@ -6,6 +6,17 @@ import static java.lang.String.valueOf;
 public class NearestNumberCase {
 
     public static String[] createNearestNumberList(int[] numberArray){
+        if(numberArray.length<1 || numberArray.length>1000){
+            throw new RuntimeException("Please enter valid int array !! ");
+
+        }
+        else {
+            for (int number: numberArray) {
+                if(number<-20000 || number>20000){
+                    throw new RuntimeException("Please enter valid int array!! ");
+                }
+            }
+        }
         int checkValue=0;
         int count =0;
         List<Integer> checkValueList = new ArrayList<>();
