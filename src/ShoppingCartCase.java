@@ -8,7 +8,7 @@ public class ShoppingCartCase {
 
     //}
 
-    public static List<Integer> findProductsDiscountedList (int[] productArray){
+    public static String findProductsNotDiscountedList (int[] productArray){
         List<Integer> productCostList = new ArrayList<>();
         List<Integer> productsNotDiscountedList = new ArrayList<>();
         for (int i = 0; i < productArray.length; i++) {
@@ -26,8 +26,12 @@ public class ShoppingCartCase {
         }
         productsNotDiscountedList.add(productCostList.get(productCostList.size()-1));
         Collections.sort(productsNotDiscountedList);
+        int totalCost = productCostList.stream()
+                .reduce(0, Integer::sum);
+        String result = "Total Cost: " + totalCost + " \nList of non-discounted products: " + productsNotDiscountedList.toString();
 
-        return productsNotDiscountedList;
-
+        return result;
     }
+
 }
+
