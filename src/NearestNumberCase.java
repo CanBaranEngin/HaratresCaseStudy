@@ -3,7 +3,7 @@ import java.util.*;
 import static java.lang.String.valueOf;
 
 
-public class NearestNumber {
+public class NearestNumberCase {
 
     public static String[] createNearestNumberList(int[] numberArray){
         int checkValue=0;
