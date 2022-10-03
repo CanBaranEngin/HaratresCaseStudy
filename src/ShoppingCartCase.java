@@ -3,12 +3,18 @@ import java.util.Collections;
 import java.util.List;
 
 public class ShoppingCartCase {
-
-    //public static String sumShoppingCost(){
-
-    //}
-
     public static String findProductsNotDiscountedList (int[] productArray){
+        if(productArray.length<1 || productArray.length>100){
+            throw new RuntimeException("Please enter valid int array !! ");
+
+        }
+        else {
+            for (int number: productArray) {
+                if(number<0 || number>2000){
+                    throw new RuntimeException("Please enter valid int array!! ");
+                }
+            }
+        }
         List<Integer> productCostList = new ArrayList<>();
         List<Integer> productsNotDiscountedList = new ArrayList<>();
         for (int i = 0; i < productArray.length; i++) {
